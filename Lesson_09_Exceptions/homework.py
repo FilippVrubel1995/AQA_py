@@ -1,25 +1,77 @@
-# Homework: Exceptions
+# ПАМЯТКА: Исключения
+# try:
+#     # код, где может возникнуть ошибка
+# except ValueError:
+#     # обработка конкретной ошибки
+# except Exception as e:
+#     # ловим любую ошибку и сохраняем описание в e
+# else:
+#     # если ошибок не было
+# finally:
+#     # выполняется ВСЕГДА (например, закрыть файл)
+#
+# raise ValueError("Сообщение") - выбросить ошибку вручную
 
-# 1. Write a function that divides two numbers. Handle the ZeroDivisionError if the denominator is 0.
+# Домашнее задание: Исключения
+
+# 1. Простой try-except:
+# Напишите функцию `safe_divide(a, b)`.
+# В блоке try попробуйте вернуть результат деления a на b.
+# В блоке except обработайте ZeroDivisionError и верните None (или выведите сообщение).
 def safe_divide(a, b):
-    # Your code here
+    # Ваш код
     pass
 
-# Test cases:
-# print(safe_divide(10, 2))  # Should print 5.0
-# print(safe_divide(10, 0))  # Should print an error message, not crash
+# Тесты:
+# print(safe_divide(10, 2))
+# print(safe_divide(10, 0))
 
-# 2. Write code that asks for user input and tries to convert it to an integer.
-#    Handle the ValueError if the input is not a number.
-user_input = "not_a_number"  # Simulating user input
-# Your code here
+# 2. Обработка ValueError:
+# Запросите у пользователя ввод числа.
+# Пытайтесь преобразовать ввод в int.
+# Если возникнет ValueError, выведите "Это не число!".
+# Ваш код:
 
-# 3. Use a try-except-finally block.
-#    - Try to open a file that doesn't exist.
-#    - Catch the FileNotFoundError.
-#    - In the finally block, print "Execution completed."
-# Your code here
+# 3. Множественные исключения:
+# Дан словарь my_dict = {'a': 1}.
+# Попробуйте:
+# 1) Получить значение по ключу 'b'.
+# 2) Разделить 10 на 0.
+# Обработайте и KeyError, и ZeroDivisionError отдельными блоками except.
+# Ваш код:
 
-# 4. Raise a custom exception (ValueError) if a user's age is negative.
-age = -5
-# Your code here
+# 4. Блок finally:
+# Откройте файл (можно несуществующий) в блоке try.
+# Обработайте FileNotFoundError.
+# В блоке finally выведите "Попытка открытия файла завершена".
+# Ваш код:
+
+# 5. Блок else:
+# Напишите код, который делит два числа. Если деление прошло успешно (без ошибок),
+# блок else должен вывести "Деление прошло успешно".
+# Ваш код:
+
+# 6. Получение информации об ошибке (as e):
+# Попробуйте преобразовать "abc" в int.
+# Перехватите ошибку как переменную `e` и выведите её строковое представление.
+# Ваш код:
+
+# 7. Генерация исключений (raise):
+# Напишите функцию `check_age(age)`.
+# Если возраст меньше 0, выбросьте ValueError с сообщением "Возраст не может быть отрицательным".
+# Ваш код:
+
+# 8. Создание собственного исключения:
+# Создайте класс исключения `NegativeValueError`, наследующий от Exception.
+# Повторите предыдущее задание, но выбрасывайте теперь это, собственное исключение.
+# Ваш код:
+
+# 9. Проброс исключения (Re-raising):
+# Напишите функцию, которая ловит исключение, печатает сообщение "Лог: произошла ошибка",
+# а затем снова выбрасывает это же исключение (raise без аргументов).
+# Ваш код:
+
+# 10. Assert:
+# Используйте assert чтобы проверить, что 2 + 2 равно 4.
+# Затем попробуйте assert 2 + 2 == 5 и посмотрите на результат.
+# Ваш код:
